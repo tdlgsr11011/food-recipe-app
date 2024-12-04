@@ -1,8 +1,14 @@
 import { Provider } from "react-redux";
 import store from "./redux/store";
 
+import NavBar from "./components/NavBar/NavBar";
+
 function App() {
-  return <h2>Hi There</h2>;
+  return (
+    <>
+      <NavBar />;
+    </>
+  );
 }
 
 const ProvidedApp = () => {
