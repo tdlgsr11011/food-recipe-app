@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+
+import "./App.css";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
-import "./App.css";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -32,4 +35,11 @@ function App() {
   );
 }
 
-export default App;
+const ProvidedApp = () => {
+  return (
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
+};
+export default ProvidedApp;
