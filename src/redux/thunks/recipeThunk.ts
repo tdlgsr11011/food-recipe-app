@@ -13,7 +13,11 @@ export const getRecipes = createAsyncThunk(
       const recipes = response.data.recipes;
       return { error: false, recipes: recipes, message: "" };
     } catch (err) {
-      return { error: true, recipes: [], message: err };
+      return {
+        error: true,
+        recipes: [],
+        message: typeof err == "string" ? err : "Something went wrong",
+      };
     }
   }
 );

@@ -4,7 +4,6 @@ import { useDispatch } from "react-redux";
 import { recipeActions } from "../../redux/slices/recipeSlice";
 import useTypedSelector from "../../redux/hooks/useTypedSelector";
 
-
 const SearchBar = () => {
   const [recipeText, setRecipeText] = useState("");
 
@@ -20,7 +19,6 @@ const SearchBar = () => {
     }
   }, [error, dispatch]);
 
-  
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(recipeActions.getRecipes({ recipeText: recipeText }));
@@ -29,7 +27,6 @@ const SearchBar = () => {
   const textChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setRecipeText(e.target.value);
   };
-
 
   return (
     <form onSubmit={submitHandler}>
