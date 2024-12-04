@@ -12,4 +12,5 @@ const ProvidedApp = () => {
     </Provider>
   );
 };
+
 export default ProvidedApp;
