@@ -1,12 +1,14 @@
 import { Provider } from "react-redux";
 import store from "./redux/store";
 
+import RouteDefinitions from "./router/RouteDefinitions/RouteDefinitions";
 import NavBar from "./components/NavBar/NavBar";
 
 function App() {
   return (
     <>
-      <NavBar />;
+      <NavBar />
+      <RouteDefinitions />
     </>
   );
 }
