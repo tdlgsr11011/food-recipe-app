@@ -2,7 +2,7 @@ import { Provider } from "react-redux";
 import store from "./redux/store";
 
 function App() {
-  return <div>Hi There</div>;
+  return <h2>Hi There</h2>;
 }
 
 const ProvidedApp = () => {
