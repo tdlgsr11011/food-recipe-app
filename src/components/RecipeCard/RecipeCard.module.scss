@@ -1,0 +1,53 @@
+.recipeCard {
+  border-radius: 1rem;
+  overflow: hidden;
+  height: 20rem;
+  box-shadow: rgb(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &:hover {
+    cursor: pointer;
+    box-shadow: rgb(0, 0, 0, 0.7) 0px 3px 15px;
+  }
+}
+
+.imageContainer {
+  width: 100%;
+  height: 10rem;
+  overflow: hidden;
+}
+
+.cardImage {
+  width: 100%;
+  height: auto;
+}
+
+.info {
+  padding: 1rem;
+}
+
+.recipeTitle {
+  font-weight: 600;
+  color: rgb(98, 50, 212);
+  max-height: 2rem;
+  text-overflow: initial;
+}
+
+.publisher {
+  padding-top: 0.5rem;
+  color: rgb(152, 53, 30);
+}
+
+.viewRecipeButton {
+  padding: 1rem;
+  font-size: 1rem;
+  border: 0px;
+  background-color: rgb(152, 53, 30);
+  // background-color: rgb(98, 50, 212);
+  color: white;
+  &:hover {
+    cursor: pointer;
+    background-color: rgb(103, 35, 20);
+  }
+}
