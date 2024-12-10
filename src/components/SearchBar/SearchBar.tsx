@@ -35,7 +35,7 @@ const SearchBar = () => {
     <form onSubmit={submitHandler}>
       <input
         type="text"
-        placeholder="eg. fried rice"
+        placeholder="eg. pizza"
         value={recipeText}
         onChange={textChangeHandler}
         className={styles.inputBar}

@@ -7,3 +7,26 @@
   align-items: center;
   justify-content: center;
 }
+
+.appHeading {
+  flex: 1;
+  text-align: center;
+}
+
+.searchBarContainer {
+  flex: 2;
+}
+
+.links {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.linkItem{
+  color: white;
+  text-decoration: none;
+  &:hover{
+    cursor: pointer;
+  }
+}
