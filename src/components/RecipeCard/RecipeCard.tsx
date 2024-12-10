@@ -1,10 +1,11 @@
 import { IRecipe } from "../../redux/slices/recipeTypes";
 import styles from "./RecipeCard.module.scss";
+import { Link } from "react-router-dom";
 
 const RecipeCard = (props: { recipe: IRecipe }) => {
   const { recipe } = props;
   return (
-    <div className={styles.recipeCard}>
+    <Link className={styles.recipeCard} to={`/recipes/${recipe.id}`}>
       <div>
         <div className={styles.imageContainer}>
           <img src={recipe.image_url} className={styles.cardImage} />
@@ -18,8 +19,7 @@ const RecipeCard = (props: { recipe: IRecipe }) => {
           <div className={styles.publisher}>by - {recipe.publisher}</div>
         </div>
       </div>
-      <button className={styles.viewRecipeButton}>View Recipe</button>
-    </div>
+    </Link>
   );
 };
 

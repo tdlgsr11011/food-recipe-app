@@ -3,12 +3,14 @@ import styles from "./SearchBar.module.scss";
 import { useDispatch } from "react-redux";
 import { recipeActions } from "../../redux/slices/recipeSlice";
 import useTypedSelector from "../../redux/hooks/useTypedSelector";
+import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
   const [recipeText, setRecipeText] = useState("");
 
   const error = useTypedSelector((rootState) => rootState.recipeState.error);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (error.length > 0) {
@@ -22,6 +24,7 @@ const SearchBar = () => {
   const submitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     dispatch(recipeActions.getRecipes({ recipeText: recipeText }));
+    navigate("/");
   };
 
   const textChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {

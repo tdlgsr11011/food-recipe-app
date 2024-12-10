@@ -21,3 +21,22 @@ export const getRecipes = createAsyncThunk(
     }
   }
 );
+
+export const getRecipeDetails = createAsyncThunk(
+  "recipeSlice/getRecipeDetails",
+  async (payload: { recipeId: string }) => {
+    const searchUrl = `${baseUrl}/api/v2/recipes/${payload.recipeId}?key=${apiKey}`;
+    try {
+      const req = await fetch(searchUrl);
+      const response = await req.json();
+      const recipeDetails = response.data.recipe;
+      return { recipeDetails, error: false, message: "" };
+    } catch (e) {
+      return {
+        recipeDetails: {},
+        error: true,
+        message: typeof e === "string" ? e : "Something went wrong",
+      };
+    }
+  }
+);

@@ -42,6 +42,21 @@ const recipeSlice = createSlice({
         } else {
           state.recipes = action.payload.recipes;
         }
+      })
+      .addCase(recipeThunks.getRecipeDetails.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(recipeThunks.getRecipeDetails.rejected, (state) => {
+        state.loading = false;
+        state.error = "request rejected";
+      })
+      .addCase(recipeThunks.getRecipeDetails.fulfilled, (state, action) => {
+        state.loading = false;
+        if (action.payload.error) {
+          state.error = action.payload.message;
+        } else {
+          state.recipeDetails = action.payload.recipeDetails;
+        }
       });
   },
 });

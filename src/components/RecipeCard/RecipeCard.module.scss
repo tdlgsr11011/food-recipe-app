@@ -1,11 +1,13 @@
 .recipeCard {
+  text-decoration: none;
   border-radius: 1rem;
   overflow: hidden;
-  height: 20rem;
+  height: 16rem;
   box-shadow: rgb(0, 0, 0, 0.24) 0px 3px 8px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: white;
   &:hover {
     cursor: pointer;
     box-shadow: rgb(0, 0, 0, 0.7) 0px 3px 15px;
@@ -41,10 +43,11 @@
 
 .viewRecipeButton {
   padding: 1rem;
+  text-decoration: none;
+  text-align: center;
   font-size: 1rem;
   border: 0px;
   background-color: rgb(152, 53, 30);
-  // background-color: rgb(98, 50, 212);
   color: white;
   &:hover {
     cursor: pointer;

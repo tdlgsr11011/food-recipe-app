@@ -1,3 +1,42 @@
+.mainContainer {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
 .recipeDetails {
-  color: red;
+  display: flex;
+  justify-content: center;
+  width: 52rem;
+  box-shadow: rgb(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.imageContainer {
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  width: 25rem;
+  height: 25rem;
+  overflow: hidden;
+  // border-radius: 1rem;
+}
+
+.imageContainer img {
+  width: 100%;
+  height: auto;
+}
+
+.detailsContainer {
+  padding: 1rem;
+  width: 25rem;
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  align-items: start;
+}
+
+.title {
+  color: rgb(98, 50, 212);
+  font-weight: 600;
 }
