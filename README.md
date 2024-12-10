@@ -1,3 +1,14 @@
+# How to run this App on your pc?
+
+1. Clone the repository
+2. Create `.env` file in the root folder of the repository
+3. Add a variable `VITE_BASE_URL = "https://forkify-api.herokuapp.com"`
+4. Generate `api_key` on https://forkify-api.herokuapp.com/v2
+5. Add another variable `VITE_API_KEY = "api_key"` to `.env` file
+6. run `npm install` in the root folder
+7. run `npm run dev` in the root
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
