@@ -18,25 +18,25 @@
   width: 25rem;
   height: 25rem;
   overflow: hidden;
-  // border-radius: 1rem;
 }
 
 .imageContainer img {
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 100%;
 }
 
-.detailsContainer {
+.ingredientsContiner {
   padding: 1rem;
   width: 25rem;
-  height: 25rem;
-  display: flex;
-  flex-direction: column;
-  overflow-y: scroll;
-  align-items: start;
 }
 
 .title {
   color: rgb(98, 50, 212);
   font-weight: 600;
+}
+
+.infoContainer {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 1rem;
 }

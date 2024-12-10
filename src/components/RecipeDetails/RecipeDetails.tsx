@@ -19,15 +19,19 @@ const RecipeDetails = () => {
 
   return (
     <div className={styles.mainContainer}>
-      <div className={styles.recipeDetails}>
-        <div className={styles.imageContainer}>
-          <img src={recipeDetails.image_url} />
-        </div>
-        <div className={styles.detailsContainer}>
+      <div>
+        <div className={styles.infoContainer}>
           <div className={styles.title}>{recipeDetails.title}</div>
           <div>by {recipeDetails.publisher}</div>
           <div>{recipeDetails.cooking_time} minutes</div>
-          <IngredientsTable ingredients={recipeDetails.ingredients} />
+        </div>
+        <div className={styles.recipeDetails}>
+          <div className={styles.imageContainer}>
+            <img src={recipeDetails.image_url} />
+          </div>
+          <div className={styles.ingredientsContiner}>
+            <IngredientsTable ingredients={recipeDetails.ingredients} />
+          </div>
         </div>
       </div>
     </div>
