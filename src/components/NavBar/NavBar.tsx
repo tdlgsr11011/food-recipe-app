@@ -10,7 +10,12 @@ const NavBar = () => {
         <SearchBar />
       </div>
       <div className={styles.links}>
-        <Link to={"/"} className={styles.linkItem}>home</Link>
+        <Link to={"/"} className={styles.linkItem}>
+          home
+        </Link>
+        <Link to={"/favourites"} className={styles.linkItem}>
+          favourites
+        </Link>
       </div>
     </nav>
   );

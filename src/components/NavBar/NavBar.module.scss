@@ -20,13 +20,14 @@
 .links {
   flex: 1;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 }
 
-.linkItem{
+.linkItem {
   color: white;
   text-decoration: none;
-  &:hover{
+  &:hover {
     cursor: pointer;
   }
+  margin-right: 2rem;
 }
