@@ -17,7 +17,7 @@ const HomePage = () => {
           <h2 className={styles.homePage}>Nothing to show, search something</h2>
         );
       } else {
-        return <RecipesContainer />;
+        return <RecipesContainer pageType={"home"} />;
       }
     }
   }, [loading, recipes]);

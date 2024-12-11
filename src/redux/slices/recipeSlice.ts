@@ -6,6 +6,8 @@ const initialState: IRecipeState = {
   loading: false,
   error: "",
   recipes: [],
+  favRecipes: [],
+  favourites: [],
   recipeDetails: {
     publisher: "",
     ingredients: [],
@@ -16,7 +18,6 @@ const initialState: IRecipeState = {
     cooking_time: 0,
     id: "",
   },
-  favourites: [],
 };
 
 const recipeSlice = createSlice({

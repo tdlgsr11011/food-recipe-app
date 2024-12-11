@@ -2,8 +2,18 @@ import useTypedSelector from "../../redux/hooks/useTypedSelector";
 import RecipeCard from "../RecipeCard/RecipeCard";
 import styles from "./RecipesContainer.module.scss";
 
-const RecipesContainer = () => {
-  const { recipes } = useTypedSelector((rootState) => rootState.recipeState);
+interface IRecipeContainerProps {
+  pageType: "home" | "favourites";
+}
+
+const RecipesContainer = (props: IRecipeContainerProps) => {
+  const recipes = useTypedSelector((rootState) => {
+    if (props.pageType == "home") {
+      return rootState.recipeState.recipes;
+    } else {
+      return rootState.recipeState.favRecipes;
+    }
+  });
 
   return (
     <div className={styles.recipeContainer}>
