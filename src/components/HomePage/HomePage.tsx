@@ -10,13 +10,11 @@ const HomePage = () => {
 
   const whatToShow = useMemo(() => {
     if (loading) {
-      return <div>Loading...</div>;
+      return <h2 className={styles.homePage}>Loading...</h2>;
     } else {
       if (recipes.length === 0) {
         return (
-          <div className={styles.homePage}>
-            Nothing to show, search something
-          </div>
+          <h2 className={styles.homePage}>Nothing to show, search something</h2>
         );
       } else {
         return <RecipesContainer />;
