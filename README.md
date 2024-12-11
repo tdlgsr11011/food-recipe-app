@@ -1,3 +1,6 @@
+# Food Recipe App
+![App image](/src/assets/app.png)
+
 # How to run this App on your pc?
 
 1. Clone the repository
