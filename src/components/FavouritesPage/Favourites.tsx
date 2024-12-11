@@ -1,20 +1,12 @@
-import { useEffect, useMemo } from "react";
+import { useMemo } from "react";
 import useTypedSelector from "../../redux/hooks/useTypedSelector";
 import RecipesContainer from "../RecipesContainer/RecipesContainer";
 import styles from "../HomePage/HomePage.module.scss";
-import { useDispatch } from "react-redux";
-import { recipeActions } from "../../redux/slices/recipeSlice";
 
 const Favourites = () => {
-  const { loading, favRecipes, favourites } = useTypedSelector(
+  const { loading, favRecipes } = useTypedSelector(
     (rootState) => rootState.recipeState
   );
-
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(recipeActions.getFavRecipes({ favourites: favourites }));
-  }, [favourites]);
 
   const whatToShow = useMemo(() => {
     if (loading) {

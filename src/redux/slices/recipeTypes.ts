@@ -28,5 +28,4 @@ export interface IRecipeState {
   recipes: IRecipe[];
   favRecipes: IRecipe[];
   recipeDetails: IRecipeDetails;
-  favourites: string[];
 }

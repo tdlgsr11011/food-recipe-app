@@ -10,7 +10,7 @@ import IngredientsTable from "../IngredientsTable/IngredientsTable";
 const RecipeDetails = () => {
   const { recipeId } = useParams();
   const dispatch = useDispatch();
-  const { recipeDetails, loading, favourites } = useTypedSelector(
+  const { recipeDetails, loading, favRecipes } = useTypedSelector(
     (rootState) => rootState.recipeState
   );
 
@@ -19,14 +19,19 @@ const RecipeDetails = () => {
   }, [recipeId]);
 
   const isFavorite = useMemo(() => {
-    return favourites.includes(recipeDetails.id);
-  }, [favourites, recipeDetails.id]);
+    return favRecipes.find((item) => item.id == recipeId);
+  }, [favRecipes, recipeId]);
 
   const addOrRemoveFromFavourites = () => {
+    const { publisher, image_url, title, id } = recipeDetails;
     if (isFavorite) {
-      dispatch(recipeActions.removeFromFavourites(recipeDetails.id))
+      dispatch(
+        recipeActions.removeFromFavourites({ publisher, image_url, title, id })
+      );
     } else {
-      dispatch(recipeActions.addToFavourites(recipeDetails.id));
+      dispatch(
+        recipeActions.addToFavourites({ publisher, image_url, title, id })
+      );
     }
   };
 
