@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import styles from "./RecipeDetails.module.scss";
+import homeStyles from "../HomePage/HomePage.module.scss";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { recipeActions } from "../../redux/slices/recipeSlice";
@@ -9,7 +10,7 @@ import IngredientsTable from "../IngredientsTable/IngredientsTable";
 const RecipeDetails = () => {
   const { recipeId } = useParams();
   const dispatch = useDispatch();
-  const { recipeDetails } = useTypedSelector(
+  const { recipeDetails, loading } = useTypedSelector(
     (rootState) => rootState.recipeState
   );
 
@@ -17,7 +18,9 @@ const RecipeDetails = () => {
     dispatch(recipeActions.getRecipeDetails({ recipeId: recipeId }));
   }, [recipeId]);
 
-  return (
+  return loading ? (
+    <h2 className={homeStyles.homePage}>Loading...</h2>
+  ) : (
     <div className={styles.mainContainer}>
       <div>
         <div className={styles.infoContainer}>
