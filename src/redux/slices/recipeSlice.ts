@@ -26,6 +26,18 @@ const recipeSlice = createSlice({
     setError: (state, action) => {
       state.error = action.payload;
     },
+    addToFavourites: (state, action) => {
+      const alreadyPresent =
+        state.favourites.find((item) => item == action.payload) != undefined;
+      if (!alreadyPresent) {
+        state.favourites = [...state.favourites, action.payload];
+      }
+    },
+    removeFromFavourites: (state, action) => {
+      state.favourites = state.favourites.filter(
+        (item) => item != action.payload
+      );
+    },
   },
   extraReducers: (builder) => {
     builder

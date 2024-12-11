@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import styles from "./RecipeDetails.module.scss";
 import homeStyles from "../HomePage/HomePage.module.scss";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { useDispatch } from "react-redux";
 import { recipeActions } from "../../redux/slices/recipeSlice";
 import useTypedSelector from "../../redux/hooks/useTypedSelector";
@@ -10,13 +10,25 @@ import IngredientsTable from "../IngredientsTable/IngredientsTable";
 const RecipeDetails = () => {
   const { recipeId } = useParams();
   const dispatch = useDispatch();
-  const { recipeDetails, loading } = useTypedSelector(
+  const { recipeDetails, loading, favourites } = useTypedSelector(
     (rootState) => rootState.recipeState
   );
 
   useEffect(() => {
     dispatch(recipeActions.getRecipeDetails({ recipeId: recipeId }));
   }, [recipeId]);
+
+  const isFavorite = useMemo(() => {
+    return favourites.includes(recipeDetails.id);
+  }, [favourites, recipeDetails.id]);
+
+  const addOrRemoveFromFavourites = () => {
+    if (isFavorite) {
+      dispatch(recipeActions.removeFromFavourites(recipeDetails.id))
+    } else {
+      dispatch(recipeActions.addToFavourites(recipeDetails.id));
+    }
+  };
 
   return loading ? (
     <h2 className={homeStyles.homePage}>Loading...</h2>
@@ -37,8 +49,11 @@ const RecipeDetails = () => {
           </div>
         </div>
         <div className={styles.buttonContainer}>
-          <button className={styles.addToFavouriteBtn}>
-            Add to favourites
+          <button
+            className={styles.addToFavouriteBtn}
+            onClick={addOrRemoveFromFavourites}
+          >
+            {isFavorite ? "Remove from favourites" : "Add to favourites"}
           </button>
         </div>
       </div>
