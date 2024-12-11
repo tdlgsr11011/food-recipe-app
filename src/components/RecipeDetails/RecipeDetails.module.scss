@@ -1,3 +1,5 @@
+@import "../../styles/index";
+
 .mainContainer {
   padding-top: 2rem;
   display: flex;
@@ -8,7 +10,7 @@
   display: flex;
   justify-content: center;
   width: 52rem;
-  box-shadow: rgb(0, 0, 0, 0.24) 0px 3px 8px;
+  box-shadow: $box-shadow-primary;
 }
 
 .imageContainer {
@@ -31,7 +33,7 @@
 }
 
 .title {
-  color: rgb(98, 50, 212);
+  color: $color-purple-primary;
   font-weight: 600;
 }
 
@@ -39,4 +41,24 @@
   display: flex;
   justify-content: space-evenly;
   margin-bottom: 1rem;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.addToFavouriteBtn {
+  border: 0px;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  box-shadow: $box-shadow-primary;
+  background-color: $color-purple-primary;
+  color: white;
+  &:hover {
+    cursor: pointer;
+    background-color: $color-purple-hover;
+  }
 }

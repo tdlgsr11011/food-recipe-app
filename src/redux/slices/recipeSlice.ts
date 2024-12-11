@@ -16,6 +16,7 @@ const initialState: IRecipeState = {
     cooking_time: 0,
     id: "",
   },
+  favourites: [],
 };
 
 const recipeSlice = createSlice({

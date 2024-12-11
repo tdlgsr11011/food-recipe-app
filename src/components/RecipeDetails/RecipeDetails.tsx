@@ -36,6 +36,11 @@ const RecipeDetails = () => {
             <IngredientsTable ingredients={recipeDetails.ingredients} />
           </div>
         </div>
+        <div className={styles.buttonContainer}>
+          <button className={styles.addToFavouriteBtn}>
+            Add to favourites
+          </button>
+        </div>
       </div>
     </div>
   );
